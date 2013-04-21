@@ -1,0 +1,274 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Tour of The Moon</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		
+		<LINK href="template.css" rel="stylesheet" type="text/css" />
+		<script src="//www.google.com/jsapi?key=ABQIAAAA5El50zA4PeDTEMlv-sXFfRSsTL4WIgxhMZ0ZK_kHjwHeQuOD4xTdBhxbkZWuzyYTVeclkwYHpb17ZQ"></script>
+		
+        <link href='http://fonts.googleapis.com/css?family=Berkshire+Swash' rel='stylesheet' type='text/css'>
+		
+		<script type="text/javascript">
+				var ge;
+				var placemark;
+				var object;
+
+				google.load("earth", "1");
+				
+
+				function init() {
+				  //addSampleUIHtml('<input id="location" type="text" value="Apollo 11"/>');
+				  /*addSampleButton('Fly Apollo!', buttonClick)
+				  addSampleButton('Fly Aitken Basin!!', buttonClick2)
+				  addSampleButton('Fly Lambert Lunar Crater!!', buttonClick3)
+				  addSampleButton('MOONKAM IAMGES !!', buttonClick4)
+				  addSampleButton('Moon Nonmenclature - Craters!!', buttonClick5)
+				  addSampleButton('MoonKAM Images - Load!!', buttonClick6)*/
+				  
+
+				 // google.earth.createInstance('map3d', initCB, failureCB) 	
+				   google.earth.createInstance('map3d', initCB, failureCB, { database: 'http://khmdb.google.com/?db=moon' })
+				 //For Mars - didn't work  google.earth.createInstance('map3d', initCB, failureCB, { database: ' http://khmdb.google.com/?db=mars'})
+
+				 }
+
+			function buttonClick4() {
+			var networkLink = ge.createNetworkLink("");
+			networkLink.setDescription("NetworkLink open to fetched content");
+			networkLink.setName("Open NetworkLink");
+			networkLink.setFlyToView(true);
+		
+			// create a Link object
+			var link = ge.createLink("");
+			
+			link.setHref("http://nepalskhabar.hostei.com/MoonData1000.kml");
+			// attach the Link to the NetworkLink
+			networkLink.setLink(link);
+			// add the NetworkLink feature to Earth
+			ge.getFeatures().appendChild(networkLink);
+		}
+
+			function buttonClick5() {
+				var href = 'http://planetarynames.wr.usgs.gov/shapefiles/MOON_nomenclature.kmz';
+				google.earth.fetchKml(ge, href, function(kmlObject) {
+					if (kmlObject)
+						ge.getFeatures().appendChild(kmlObject);
+					});
+			}
+
+			function buttonClick6() {
+				var networkLink2 = ge.createNetworkLink("");
+				networkLink2.setDescription("NetworkLink2 open to fetched content");
+				networkLink2.setName("Open NetworkLink2");
+				networkLink2.setFlyToView(true);
+				var link2 = ge.createLink("");
+				link2.setHref("https://moonkam.ucsd.edu/files/kml/kml_generator.php?ccfcommand_id=2373");
+				networkLink2.setLink(link2);
+				ge.getFeatures().appendChild(networkLink2);
+			}
+			
+			function buttonClick7() {
+    	var networkLink3 = ge.createNetworkLink("");
+		networkLink3.setDescription("NetworkLink3 open to fetched content");
+  		networkLink3.setName("Open NetworkLink3");
+  		networkLink3.setFlyToView(true);
+	  	var link2 = ge.createLink("");
+  		link2.setHref("http://curator.jsc.nasa.gov/lunar/moon/Apollo16.kml");
+  		networkLink3.setLink(link2);
+  		ge.getFeatures().appendChild(networkLink3);
+  	}
+
+	function buttonClick8() {
+    	var networkLink4 = ge.createNetworkLink("");
+		networkLink4.setDescription("NetworkLink3 open to fetched content");
+  		networkLink4.setName("Open NetworkLink3");
+  		networkLink4.setFlyToView(true);
+	  	var link2 = ge.createLink("");
+  		link2.setHref("http://curator.jsc.nasa.gov/lunar/moon/Apollo%20Moon%20Rocks.kml");
+  		networkLink4.setLink(link2);
+  		ge.getFeatures().appendChild(networkLink4);
+  	}
+
+			function buttonClick3() {
+			// The Lambert Lunar crater the largest crater in the solar syste
+				var lookAt = ge.createLookAt('');
+				lookAt.set(25.238916, -21.138078, 0, ge.ALTITUDE_RELATIVE_TO_GROUND, -1.811669, 0, 78000);    
+				 ge.getView().setAbstractView(lookAt);    			
+			}
+
+			function buttonClick2() {
+					var lookAt = ge.createLookAt('');
+					// The Aitken basin, the largest crater in the solar system
+					lookAt.set(-16.800000, 173.400000, 0, ge.ALTITUDE_RELATIVE_TO_GROUND, -4.378803, 0, 135000);     
+					ge.getView().setAbstractView(lookAt);    
+			}
+
+			function buttonClick() {
+				  //	var lookAt = ge.createLookAt('');
+				  //      lookAt.set(45.238916, -21.138078, 0, ge.ALTITUDE_RELATIVE_TO_GROUND, -1.811669, 0, 78000);
+				  //	ge.getView().setAbstractView(lookAt);
+					
+					//var geocodeLocation = document.getElementById('location').value;
+					//var geocoder = new google.maps.ClientGeocoder();
+					//geocoder.getLatLng(geocodeLocation, function(point) {
+					//if (point) { ..... });
+					
+					var lookAt = ge.createLookAt('');
+					// Apollo 11 landing site	
+					lookAt.set(0.681400, 23.460550, 0, ge.ALTITUDE_RELATIVE_TO_GROUND, -1.946649, 0, 130);
+					ge.getView().setAbstractView(lookAt);    
+			}
+
+			
+			function initCB(instance) {
+				ge = instance;
+				ge.getWindow().setVisibility(true);
+
+				// add a navigation control
+				ge.getNavigationControl().setVisibility(ge.VISIBILITY_AUTO);
+
+				// add some layers
+				ge.getLayerRoot().enableLayerById(ge.LAYER_BORDERS, true);
+				ge.getLayerRoot().enableLayerById(ge.LAYER_ROADS, true);
+
+				// just for debugging purposes
+				document.getElementById('installed-plugin-version').innerHTML =
+				ge.getPluginVersion().toString(); 		
+			}
+			
+			function addSampleButton(caption, clickHandler) {
+					var btn = document.createElement('input');
+					btn.type = 'button';
+					btn.value = caption;
+					if (btn.attachEvent)
+						btn.attachEvent('onclick', clickHandler);
+					else
+					btn.addEventListener('click', clickHandler, false);
+				// add the button to the Sample UI
+				document.getElementById('sample-ui').appendChild(btn);
+			}
+
+			function addSampleUIHtml(html) {
+			  document.getElementById('sample-ui').innerHTML += html;
+			}
+			
+			function failureCB(errorCode) {
+			}
+
+			google.setOnLoadCallback(init);
+
+				//var href = 'http://planetarynames.wr.usgs.gov/GIS_Downloads/MOON_nomenclature.kmz'
+				//var href = 'https://moonkam.ucsd.edu/files/kml/kml_generator.php?ccfcommand_id=2375'
+				//var href ='https://moonkam.ucsd.edu/files/kml/kml_generator.php?ccfcommand_id=2375'
+
+				
+
+				function failureCB(errorCode) {
+				}
+
+				google.setOnLoadCallback(init);
+		</script>
+	</head>
+	
+	<body>
+	
+		<div id="wrapper">
+		
+			<div id="header-wrapper">
+				<div id="header">
+					 <P>ON THE MOON</P>
+					<!--div class="header-img"> <img src="moon.png" /></div-->
+				</div><!-- end header div -->			
+			</div> <!-- end header-wrapper div -->
+			
+			<div id="top-bar">
+			</div> <!-- end top-bar div -->
+			
+			<div id="container">
+
+				<div id="sidebar">
+					<div class="sidebar-search">
+						<div class="sidebar-title" onclick="buttonClick();"> Apollo </div>
+					</div><!-- end sidebar-search div -->
+					
+					<div class="sidebar-search">
+						<div class="sidebar-title" onclick="buttonClick2();"> Aitken Basin </div>
+					</div><!-- end sidebar-search div -->
+					
+					<div class="sidebar-flyto">
+						<div class="sidebar-title" onclick="buttonClick3();"> Lambert Lunar Crater </div>				
+					</div><!-- end sidebar-flyto div -->
+					
+					<div class="sidebar-gravity">
+						<div class="sidebar-title" onclick="buttonClick7();"> Appolo 16 rock samples </div>				
+					</div><!-- end sidebar-gravity div-->
+					
+					<div class="sidebar-landmark">
+						<div class="sidebar-title" onclick="buttonClick5();">Moon Nonmenclature - Craters</div>						
+					</div><!-- end sidebar-landmark div -->
+					
+					<div class="sidebar-landmark">
+						<div class="sidebar-title" onclick="buttonClick4();"> MoonKAM Images</div>		
+					</div><!-- end sidebar-landmark div -->
+					
+					<div class="sidebar-landmark">
+						<div class="sidebar-title" onclick="buttonClick8();"> Appolo 20 moon rocks </div>		
+					</div><!-- end sidebar-landmark div -->
+					
+				</div><!-- end sidebar div -->
+			
+				
+				<div id="content">
+				
+					 <div id="map3d" style="height:495px;" ></div>	
+					
+					<div id="sample-ui"></div> 
+                </div> 
+					<!--div id="map3d" style="height:495px; width:845px;"></div>
+
+					<div id="map5d" style="height:495px; width:845px;"></div> 
+
+					<div id="map4d" style="height:495px; width:845px;"></div-->
+					
+				</div>	<!-- end content div -->
+				
+			</div> <!-- end container div -->
+			
+			<div class="clr"></div>
+			
+			<div id="footer-wrapper">
+				<div id="footer">
+					<!--div id="sitecopyright">
+						Twitter <br/>Youtube  <br/>Facebook
+					</div--><!-- end copyright div -->
+                
+					<!--div id="organizer">
+						<!--img src="images/icons/icimod.jpg" height="48px" width="70px"/>
+						<img src="images/icons/nasa.jpg" height="48px"/>
+						<p>Organizers<br/>
+						<span>NASA</span> <br/>
+						<span>ICIMOD</span><br/>
+						<span>Young Innovations Pvt. Ltd.</span></p>
+						
+						
+						</div-->
+					<div id="spaceApp">
+					      SPACE APP CHALLENGE
+					</div>
+					<div id="followus">
+					<p>Follow us at</p>
+						<img src="images/icons/twitter.png"/>
+                        <img src="images/icons/fb.png" />
+						<img src="images/icons/youtube.png"/>
+                        <img src="images/icons/g+.png"/>	
+					</div><!-- end followus div -->
+					
+				</div><!-- end footer div -->				
+			</div> <!-- end footer-wrapper div -->
+			
+		</div> <!-- end wrapper div -->
+		
+	</body>
+	
+</html>

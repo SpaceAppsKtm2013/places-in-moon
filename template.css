@@ -1,0 +1,251 @@
+/* 
+    Document   : Template.css
+    Created on : Apr 20, 2013, 10:39:35 PM
+    Author     : Smrita Pokharel, Srija Pokharel
+    Description: Purpose of the stylesheet follows.
+*/
+body
+{
+    margin:0px;
+    padding:0px;
+    font-size:12px;
+    background-color:#F7F7F7;
+    text-align: justify;
+	background-image:url(images/planetMoon1.jpg);
+}
+
+#wrapper
+{
+    margin:0 auto;
+    width:1350px;
+    height:auto;	
+}
+
+#header-wrapper
+{
+    width:100%;
+    font-size:35px;
+  /*  background-color: #C8C8C8;*/
+  background:rgba(#FFF,#fff,#fff,0.5);
+    height:100px;
+    margin:0px;
+    border-bottom:1px solid #9f0000;
+    font-family: 'Berkshire Swash', cursive;
+	text-shadow:2px 2px 3px #CCC;
+    color:#364023;
+}
+
+#header
+{
+    width:80%;
+    margin:0px auto;
+	color: #CCC;/*#780000;*/
+	
+	background-size: 800px;
+	padding-top: 5px;
+	opacity:0.83;
+	filter:alpha(opacity=60);
+}
+
+.page-title {
+    color: #F7F7F7;
+    float: left;
+    font-family: 'Trebuchet MS';
+    font-weight: bold;
+    height: 82px;
+    margin: 0px 5px 5px 5px;
+    width: 231px;
+	
+	background-color:#000;
+	border:1px solid black;
+	opacity:0.83;
+	filter:alpha(opacity=60);
+}
+
+.header-img {
+	padding-top: 2.5px;
+}
+
+.header-img img
+{
+	opacity:0.15;
+	filter:alpha(opacity=40); /* For IE8 and earlier */
+	width: 800px;
+}
+
+.page-title h1 {
+	font-size:32px;
+	margin-left: 5px;
+}
+
+#top-bar {
+  /* background-color: #780000;*/
+background: linear-gradient(to bottom, #780000 10%,#9f0000 100%) repeat scroll 0 0;
+    border-top: 1px solid #a81919;
+    float: left;
+    height: 40px;
+    margin-top: -4px;
+    width: 100%;
+}
+
+#nav-bar {   
+    font-size: 15px;
+    height: 40px;
+ 
+    margin-left: 90px;
+    margin-top: -5px;
+}
+
+#spaceApp
+{
+    float: left;
+    font-family: 'Berkshire Swash',cursive;
+    font-size: 30px;
+    margin-left: 46px;
+    margin-top: 22px;
+    width: 50%;
+    text-shadow:2px 2px 3px #CCC;
+
+}
+
+#nav-bar ul {
+    list-style: none outside none;    
+}
+
+#nav-bar ul li {
+    display: inline;
+}
+
+#nav-bar ul li a {
+    background: none repeat scroll 0 0 CadetBlue;
+    border-left: 1px solid #FFFFFF;
+    color: #EEEEEE;  
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+}
+
+#nav-bar ul li a:hover
+ {
+    background: none repeat scroll 0 0 #DBE3CC;
+    color: black;
+    text-decoration: none;
+}
+
+a
+{
+    text-decoration: none;
+    color:white;
+}
+
+a:hover
+{
+    font-weight: bold;
+    color:#abbd8a;
+}
+
+#container
+{
+    width:80%;
+    margin:10px auto;
+	min-height:530px;
+    height:auto;
+	box-shadow:1px 1px 3px #333;
+}
+
+#sidebar
+{
+	width:20%;
+    height:auto;/*495px;*/
+    float:left;
+	margin: 5px;
+	/*background-color: #C8C8C8*/
+	background:rgba(0,#fff,#fff,0.3);
+	
+}
+.sidebar-title {
+	width: 96%;
+	/*background-color: #780000;*/
+background: linear-gradient(to bottom, #780000 10%,#9f0000 100%) repeat scroll 0 0;
+	margin-bottom:1px;
+	height: 15px;
+	padding: 5px;
+	color: #FFF;
+	font-weight:bold;
+}
+.sidebar-search{
+	height: auto;
+	/*border-bottom: 2px solid #780000;*/
+}
+
+.sidebar-flyto{
+	height: auto;
+	/*border-bottom: 2px solid #780000;*/
+}
+
+.sidebar-gravity{
+	height: auto;
+	/*border-bottom: 2px solid #780000;*/
+}
+
+.sidebar-landmark{
+	height: auto;
+	/*border-bottom: 2px solid #780000;*/
+}
+
+#content
+{
+    width:78%;
+    height: 325px;
+    float:left;
+	margin: 5px;
+	background-color:#C8C8C8;
+}
+
+#footer-wrapper
+{
+	height:80px;
+    width:100%;
+	/*background: linear-gradient(to bottom, #214F75 0%, #1F517C 100%) repeat scroll 0 0;*/
+   /* background-color: #780000;*/
+ 
+}
+
+#footer
+{
+	height:80px;
+    width:80%;
+    margin:00px auto;
+	color: #fff;
+	  box-shadow:1px 1px 3px #EEE;
+}
+
+#sitecopyright{
+	min-width: 22%;
+	float: left;
+	margin-top: 15px;
+}
+
+#organizer {
+    float: left;
+    margin-top: -5px;
+    width: 25%;
+	margin-left: 10px;
+}
+
+ #organiser img
+ {
+    width:36px;
+	height:36px;
+ }
+
+#followus{
+	float: right;
+	margin-top:-10px;
+	margin-right:10px;
+}
+
+#followus p
+{
+   border-bottom:1px solid #EEE;
+}
